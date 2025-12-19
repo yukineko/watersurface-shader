@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3991117780124507985
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterSurfaceMat
-  m_Shader: {fileID: -6465566751694194690, guid: 3804886d9729a834bb76ab8a8f722338,
+  m_Name: LightWaterSurface
+  m_Shader: {fileID: -6465566751694194690, guid: ac7b05eb148c53f4ea86e689c8cf7a8a,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -57,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 430faf776ff00e64d94689902bc3b77d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -66,14 +79,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_a46c17ac59fd4968a3b54b5584210e64_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 430faf776ff00e64d94689902bc3b77d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_ddce8749381f4a578bc011508026a44c_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 430faf776ff00e64d94689902bc3b77d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -103,20 +108,16 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DepthMaxDistance: 5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FresnelPower: 4
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Layer1Speed: 0.05
-    - _Layer2Speed: 0.08
     - _Metallic: 0
-    - _NormalStrength: 0.5
+    - _NormalStrength: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -125,40 +126,20 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed0: 0.1
-    - _Speed1: 0.1
+    - _Speed1: 0.05
+    - _Speed2: 0.08
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _Strength: 0.5
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepColor: {r: 0.02, g: 0.14999998, b: 0.29999998, a: 0.9}
-    - _Direction: {r: 1, g: 0.3, b: 0, a: 0}
-    - _Direction0: {r: 1, g: 0.3, b: 0, a: 0}
-    - _Direction1: {r: -0.3, g: 0.2, b: 0, a: 0}
+    - _Dir1: {r: 1, g: 0.3, b: 0, a: 0}
+    - _Dir2: {r: -0.5, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Layer1Direction: {r: 1, g: 0.3, b: 0, a: 0}
-    - _Layer1Tiling: {r: 2, g: 2, b: 0, a: 0}
-    - _Layer2Direction: {r: -0.5, g: 1, b: 0, a: 0}
-    - _Layer2Tiling: {r: 4, g: 4, b: 0, a: 0}
-    - _ReflectColor: {r: 0.6, g: 0.8, b: 1, a: 1}
-    - _ShallowColor: {r: 0.098039195, g: 0.35032222, b: 0.69803923, a: 0.9}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tilling1: {r: 2, g: 2, b: 0, a: 0}
+    - _Tilling2: {r: 3, g: 3, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4894008246966104156
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
